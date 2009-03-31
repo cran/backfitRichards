@@ -1,3 +1,5 @@
+setClass("backFits", contains = "list")
+
 `backFits` <-
-function (list, FUN, ...) 
-lapply(list, function(X) backFit(X, FUN, ...))
+function (object, FUN, ...) 
+return(new("backFits", lapply(object, function(X) backFit(X, FUN, ...))))

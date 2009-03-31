@@ -11,15 +11,15 @@
 \tabular{ll}{
 Package: \tab backfitRichards        \cr
 Type:    \tab Package                \cr
-Version: \tab 0.4                    \cr
-Date:    \tab 2008-03-27             \cr
+Version: \tab 0.4.5                  \cr
+Date:    \tab 2008-09-01             \cr
 License: \tab GPL Version 2 or later \cr
 }
 }
 \author{
 Jens Henrik Badsberg
 
-Maintainer: Jens Henrik Badsberg <march2008spam4richards@badsberg.eu>
+Maintainer: Jens Henrik Badsberg <september2008richards@badsberg.eu>
 }
 % 
 % Emmens CW.:
@@ -39,6 +39,10 @@ Maintainer: Jens Henrik Badsberg <march2008spam4richards@badsberg.eu>
 \references{
 Richards, F.J.: A flexible growth function for empirical use.
 J. Exp. Bot. 1959; 10:290-300.
+
+Findlay JW, Dillard RF.:
+Appropriate calibration curve fitting in ligand binding assays.
+AAPS J. 2007 Jun 29;9(2).
 
 Finney DJ.: Statistical methods in biological assay,
 3rd ed. London: Griffin; 1978. 
@@ -92,8 +96,8 @@ myApplyFUN2X <-
     }
   }
 
-fits.Fpl.BP <- fitList(listChicks, FUN = fit.Fpl.BP, n = 4,
-                       applyFUN2X = myApplyFUN2X)
+fits.Fpl.BP <- lamodified(listChicks, FUN = fit.Fpl.BP, n = 4,
+                          applyFUN2X = myApplyFUN2X)
 
 back.Fits <- backFits(listChicks, FUN = fit.Fpl.BP, ny = 1,
                       respName = "weight", indepName = "ExpTime",

@@ -17,11 +17,11 @@ backConf(Z, x = as.real(dimnames(Z)[[1]]), ylim = c(min(Z), max(Z)),
   \item{lineCol}{ a text string, \code{col} for the line y = 100 \%. }
   \item{lineLwd}{ a numeric value, \code{lwd} for the line y = 100 \%. }
   \item{centerLty}{ a numeric value, \code{lty} for joining
-                    the means of thedependent values. }
+                    the means of the dependent values. }
   \item{centerCol}{ a text string, \code{col} for joining
-                    the means of thedependent values. }
+                    the means of the dependent values. }
   \item{centerLwd}{ a numeric value, \code{lwd} for joining
-                    the means of thedependent values. }
+                    the means of the dependent values. }
   \item{confCex}{ a numeric value, \code{cex} for the size
                   of the 'square' of the confidence intervals. }
   \item{confCol}{ a text string, \code{col} of the confidence intervals. }

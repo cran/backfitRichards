@@ -1,13 +1,14 @@
 \name{backFits}
 \alias{backFits}
+\alias{backFits-class}
 \title{ Backfitted values for a list of Richards curves }
 \description{ Backfitted values are calculated,
               with fit of the curves, for a list of Richards curves. }
 \usage{
-backFits(list, FUN, ...)
+backFits(object, FUN, ...)
 }
 \arguments{
-  \item{list}{ a list of datasets. }
+  \item{object}{ a list of datasets. }
   \item{FUN}{ a function estimating a model for each dataset. }
   \item{\dots}{ additional arguments. }
 }

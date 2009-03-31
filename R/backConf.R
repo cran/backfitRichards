@@ -12,9 +12,13 @@ function (Z, x = as.real(dimnames(Z)[[1]]), ylim = c(min(Z), max(Z)),
     }
     LogZ <- log(Z)
     y <- apply(LogZ, 1, mean, na.rm = TRUE)
-    var <- apply(LogZ, 1, var, na.rm = TRUE)
+    var <- apply(LogZ, 1, function(y) 
+                              if (length(y[!is.na(y)]) > 0)
+                                  var(y, na.rm = TRUE) 
+                              else return(-1))
     n <- apply(LogZ, 1, function(x) length(which(!is.na(x))))
-    sd <- 2 * sqrt(var/n)
+    sd <- 2 * sqrt(var/ifelse(n > 0, n, -0.5))
+    sd <- ifelse(is.na(sd) | n < 1, 0, sd)
     lines(range(x), c(100, 100), col = lineCol, lty = lineLty, 
         lwd = lineLwd)
     lines(x, exp(y), col = centerCol, lty = centerLty, lwd = centerLwd)

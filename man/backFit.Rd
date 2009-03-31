@@ -1,5 +1,6 @@
 \name{backFit}
 \alias{backFit}
+\alias{backFit-class}
 \title{ Backfitted values for one Richards curve }
 \description{ Calculate the backfitted values for one Richards curve. }
 \usage{
